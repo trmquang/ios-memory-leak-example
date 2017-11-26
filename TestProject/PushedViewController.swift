@@ -54,6 +54,9 @@ class PushedViewController: UIViewController {
     deinit {
         // check if view controller has been "really" deinit
         print ("Pushed View Controller has been deinitalized")
+        if let timer = customBlockTimer {
+            timer.invalidate()
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
